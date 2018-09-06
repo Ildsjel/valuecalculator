@@ -1,19 +1,33 @@
 <html>
-	<head>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Value Calculator</title>
+
+		<!--Import additional fonts-->
+		<link href="./Value Calculator_files/css" rel="stylesheet" type="text/css">
+		<!--link to stylesheet-->
+		<link rel="stylesheet" type="text/css" href="/Users/jhoenscheid/Desktop/value_calc/CoD_v4/valuecalculatorv3.css">
+		<!--link to icon librabry-->
+		<link rel="stylesheet" href="./Value Calculator_files/font-awesome.min.css">
+		<!--link to angular-->
+		<!--<script type="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>-->
 
 
 	</head>
 	<body>
-		<h1>Value Calculator</h1>
+		<div id="backgrounddiv">
+		<main id="main">
 
-		<form>
+		<form id="valueTypeForm">
 
-  			<p>What kind of value do you expect from your project?</p>
+  			<h1>What kind of value do you expect from your project?</h1>
 
   <!--here is the table to get the user input about the type of value creation.-->
 
   				<script type="text/javascript" src="calcv3.js"></script>
 
+					<div id="radiobuttons">
 			  <fieldset>
 			  	<br>
 			    <input type="radio" id="redcos" name="valuetype" value="redcos">
@@ -34,15 +48,15 @@
 			     <input type="radio" id="prorev" name="valuetype" value="Protect Revenue">
 			    <label for="prorev">Protect Revenue</label>
 			    </br>
+				</div>
 
-			    <br>
-			    <main id="confirm">
+					<br>
 			    	<button type="button" id="confirmbutton" onclick="valueType()">confirm</button>
-			    </main>
 				</br>
 
 			  </fieldset>
 				<div id="output"></div>
 	</form>
-
+</div>
+</main>
 	</body>

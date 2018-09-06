@@ -66,7 +66,7 @@ function valueType() {
 			document.getElementById("output").innerHTML=totalrevenueprotected;
 		}
 
-
+/*break*/
 	else {
 		console.log("Error");
 		}
