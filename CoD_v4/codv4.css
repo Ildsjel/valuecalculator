@@ -1,0 +1,98 @@
+p {
+	color: white;
+	position: absolute;
+	font-family: "Ostrich Sans", sans-serif, bold;
+	font-size: 18px;
+	text-align: center;
+}
+
+h1 {
+	color: white;
+	font-family: "Ostrich Sans", sans-serif, bold;
+	font-size: 35px;
+	text-align: center;
+}
+
+/* I have to add different font styles the current ones look boring and weak*/
+
+.calculatorurl {
+	min-width: 350px;
+    min-height: 350px;
+    background-color: #ff7f50ba; 
+    background-image: url();
+    
+}
+
+.backlogurl {
+	min-width: 350px;
+    min-height: 350px;
+    background-color: #9d9eb3;
+
+}
+
+
+.calculatorurlimage {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background-image: url(/Users/jhoenscheid/Desktop/Javascript_Learn/CoD_v4/media/goat.jpg);
+	background-size: cover;
+	background-position: -15px;
+	position: absolute;
+	margin-top: 60px;
+	margin-left: 50px;
+
+}
+
+/*I don't have to align the images with margins here. a float would also help*/
+
+.backlogurlimage {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background-image: url(/Users/jhoenscheid/Desktop/Javascript_Learn/CoD_v4/media/elephant.jpg);
+	background-size: cover;
+	background-position: -6px;
+	position: absolute;
+	margin-top: 80px;
+	margin-left: 750px;
+}
+
+.textheadcalc {
+	width: 200px;
+	height: 200px;
+	color: grey;
+	position: absolute;
+	margin-left: 600px;
+
+}
+
+.textheadback {
+	border: solid, white, 2px;
+	width: 200px;
+	height: 200px;
+	color: grey;
+	position: absolute;
+	margin-left: 250px;
+	margin-top: 80px;
+	margin-bottom: 80px;
+
+}
+
+.textboxcalc {
+	width: 200px;
+	height: 200px;
+	color: grey;
+	position: absolute;
+	margin-left: 600px;
+	margin-top: 80px;
+}
+
+.textboxback {
+	width: 200px;
+	height: 200px;
+	color: grey;
+	position: absolute;
+	margin-left: 250px;
+	margin-top: 80px;
+}
