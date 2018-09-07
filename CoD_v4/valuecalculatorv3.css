@@ -1,5 +1,5 @@
 body {
-  background-image: url("/Users/jhoenscheid/Desktop/value_calc/CoD_v4/Value Calculator_files/blackpolygon.jpg");
+  background-image: url("/Users/jhoenscheid/Desktop/value_calc/CoD_v4/Value Calculator_files/polygonmoon.jpg");
   align-self: stretch;
 }
 
@@ -7,7 +7,7 @@ h1 {
 	color: white;
 	position: absolute;
 	font-family: "Ostrich Sans", sans-serif, bold;
-	font-size: 35px;
+	font-size: 20px;
 	text-align: center;
 }
 
@@ -42,4 +42,13 @@ form {
     cursor: pointer;
     -webkit-box-shadow: inset 0 -2px #dadedf;
     box-shadow: inset 0 -2px #dadedf;
+}
+
+#output {
+  color: white;
+	position: absolute;
+	font-family: "Ostrich Sans", sans-serif, bold;
+	font-size: 200px;
+	text-align: center;
+  margin: 50px;
 }
