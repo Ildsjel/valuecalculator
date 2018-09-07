@@ -1,3 +1,32 @@
+/*function to show inputs instead of alerts*/
+
+function valueTypeInput() {
+
+	if (document.getElementById('redcos').checked) {
+		document.getElementById('redcosinput').style.visibility = 'visible';
+	}
+	else document.getElementById('redcosinput').style.visibility = 'hidden';
+
+
+	if (document.getElementById('avocos').checked) {
+		document.getElementById('avocosinput').style.visibility = 'visible';
+	}
+	else document.getElementById('avocosinput').style.visibility = 'hidden';
+
+
+	if (document.getElementById('increv').checked) {
+		document.getElementById('increvinput').style.visibility = 'visible';
+	}
+	else document.getElementById('increvinput').style.visibility = 'hidden';
+
+	if (document.getElementById('prorev').checked) {
+		document.getElementById('prorevinput').style.visibility = 'visible';
+	}
+	else document.getElementById('prorevinput').style.visibility = 'hidden';
+
+}
+
+
 
 /*function to get value type*/
 

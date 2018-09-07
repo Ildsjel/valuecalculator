@@ -23,38 +23,67 @@
 
   			<h1>What kind of value do you expect from your project?</h1>
 
-  <!--here is the table to get the user input about the type of value creation.-->
+  			<!--here is the table to get the user input about the type of value creation.-->
 
   				<script type="text/javascript" src="calcv3.js"></script>
 
 					<div id="radiobuttons">
 			  <fieldset>
+
+					<!--REDUCE COST OPTION-->
 			  	<br>
-			    <input type="radio" id="redcos" name="valuetype" value="redcos">
+			    <input type="radio" id="redcos" name="valuetype" value="redcos" onclick="valueTypeInput();">
 			    <label for="redcos">Reduce Cost</label>
-				</br>
+					<!--Hidden Input boxes that appear on clicking the radio are put here:-->
+					<div id="redcosinput" style="visibility:hidden">
+						<p>How many people work on it per week:</p> <input type='number' id="redcostotalppl" name='ppl'><br>
+						<p>How many hours is the process worked on per week:</p><input type='number' id="redcostotalhrs" name='hrs'><br>
+					</div>
+					</br>
 
-				<br>
-			    <input type="radio" id="avocos" name="valuetype" value="Avoid Cost">
+					<!--AVOID COST OPTION-->
+					<br>
+			    <input type="radio" id="avocos" name="valuetype" value="Avoid Cost" onclick="valueTypeInput();">
 			    <label for="avocos">Avoid Cost</label>
-			    </br>
-
-			    <br>
-			    <input type="radio" id="increv" name="valuetype" value="Increase Revenue">
-			    <label for="increv">Increase Revenue</label>
+					<!--Hidden Input boxes that appear on clicking the radio are put here:-->
+					<div id="avocosinput" style="visibility:hidden">
+						<p>How much cost will be avoided in total:</p> <input type='number' id="avocosttl" name='ttl'><br>
+						<p>Is there a date when the cost will occur:</p><input type="datetime" id="avocostime" name='tme'><br>
+					</div>
 				</br>
 
+					<!--INCREASE REVENUE OPTION-->
+			    <br>
+			    <input type="radio" id="increv" name="valuetype" value="Increase Revenue" onclick="valueTypeInput();">
+			    <label for="increv">Increase Revenue</label>
+					<!--Hidden Input boxes that appear on clicking the radio are put here:-->
+					<div id="increvinput" style="visibility:hidden">
+						<p>How much will revenue increase in sales per week:</p><input type='number' id="increvsls" name='sls'><br>
+						<p>How many items can be sold per week:</p><input type='number' id="increvitm" name='itm'><br>
+					</div>
+				</br>
+
+
+				<!--PROTECT REVENUE OPTION-->
 				<br>
-			     <input type="radio" id="prorev" name="valuetype" value="Protect Revenue">
+			     <input type="radio" id="prorev" name="valuetype" value="Protect Revenue" onclick="valueTypeInput();">
 			    <label for="prorev">Protect Revenue</label>
+					<!--Hidden Input boxes that appear on clicking the radio are put here:-->
+				<div id="prorevinput" style="visibility:hidden">
+						<p>How much revenue will be protected each week:</p><input type='number' id="prorevwek" name='wek'><br>
+					</div>
+				</br>
+
 			    </br>
 				</div>
-
+				<!--Confirm Button to start calculation-->
 					<br>
 			    	<button type="button" id="confirmbutton" onclick="valueType()">confirm</button>
 				</br>
 
 			  </fieldset>
+
+				<!--Output Element for calculations-->
 				<div id="output"></div>
 	</form>
 </div>
