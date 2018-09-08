@@ -38,12 +38,13 @@ function valueType() {
 	/*type reduce cost*/
 
 	if (redcos.checked){
-		var manpower = prompt("Please enter how many people are involved in the current process", "10");
-		var timespent = prompt("Please enter how many hours a week the process takes", "10");
+		var manpower = document.getElementById("redcostotalppl").value;
+		var timespent = document.getElementById("redcostotalhrs").value;
 
 			if (manpower != 0){
-				var redcostotal = manpower*timespent;
+				var redcostotal = (manpower*25)*timespent; /*25 as multiplier is chosen, because a Full time employee earns approx that much an hour*/
 				}
+
 			else {
 				console.log("Error");
 			}
@@ -54,8 +55,8 @@ function valueType() {
 /*type cost avoided*/
 
 	else if (avocos.checked){
-		var totalcostavoided = prompt("Please enter how much cost in total will be avoided", "10");
-		var totalcosttime = prompt("Please enter when the cost will occur", "10.10.18");
+		var totalcostavoided = document.getElementById("avocosttl").value;
+		var totalcosttime = document.getElementById("avocostime").value;
 
 			if (totalcostavoided != 0){
 				var avocostotal = totalcostavoided;
@@ -69,8 +70,8 @@ function valueType() {
 /*type increase revenue:*/
 
 	else if (increv.checked){
-		var totalrevenueincrease = prompt("Please enter how much revenue will increase per sales", "10");
-		var howmanysalesperweek = prompt("Please enter how much you can sell per week", "10");
+		var totalrevenueincrease = document.getElementById("increvsls").value;
+		var howmanysalesperweek = document.getElementById("increvitm").value;
 
 			if (totalrevenueincrease != 0){
 				var increvtotal = totalrevenueincrease*howmanysalesperweek;
@@ -84,7 +85,7 @@ function valueType() {
 /*type protect revenue*/
 
 	else if (prorev.checked){
-		var totalrevenueprotected = prompt("Please enter how much revenue will be protected per week", "10");
+		var totalrevenueprotected = document.getElementById("prorevwek").value;
 
 			if (totalrevenueprotected != 0){
 				var prorevtotal = totalrevenueprotected;
