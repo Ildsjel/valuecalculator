@@ -5,7 +5,7 @@ body {
 
 h1 {
 	color: white;
-	position: absolute;
+	position: inherit;
 	font-family: "Ostrich Sans", sans-serif, bold;
 	font-size: 20px;
 	text-align: center;
@@ -18,12 +18,13 @@ form {
   border-radius: 0; /* Remove corner curve */
   border: 2px solid #fff; /* 2px white border */
   color: #fff; /* White text */
-  position:absolute;
+  position:inherit;
   margin: 70px;
 }
 
 #radiobuttons{
   margin:70px;
+  position: inherit;
 }
 
 #confirmbutton {
@@ -46,7 +47,7 @@ form {
 
 #output {
   color: white;
-	position: absolute;
+	position: relative;
 	font-family: "Ostrich Sans", sans-serif, bold;
 	font-size: 200px;
 	text-align: center;
