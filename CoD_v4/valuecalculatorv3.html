@@ -36,8 +36,10 @@
 			    <label for="redcos">Reduce Cost</label>
 					<!--Hidden Input boxes that appear on clicking the radio are put here:-->
 					<div id="redcosinput" style="display:none">
-						<p>How many people work on it per week:</p> <input type='number' id="redcostotalppl" name='ppl'><br>
+						<p>How many people work on the process per week:</p> <input type='number' id="redcostotalppl" name='ppl'><br>
 						<p>How many hours is the process worked on per week:</p><input type='number' id="redcostotalhrs" name='hrs'><br>
+						<p>How many people will work on the process per week, when the solution is finished:</p><input type='number' id="redcosfutureppl" name='ftrppl'><br>
+						<p>How many hours will the process be worked be worked on per person per week, when the solution is finished:</p><input type="number" id="redcosfuturehrs" name='ftrhrs'>
 					</div>
 					</br>
 
@@ -47,8 +49,9 @@
 			    <label for="avocos">Avoid Cost</label>
 					<!--Hidden Input boxes that appear on clicking the radio are put here:-->
 					<div id="avocosinput" style="display:none">
-						<p>How much cost will be avoided in total:</p> <input type='number' id="avocosttl" name='ttl'><br>
-						<p>Is there a date when the cost will occur:</p><input type="datetime" id="avocostime" name='tme'><br>
+						<p>How much will the cost be, if the event happens:</p> <input type='number' id="avocosttl" name='ttl'><br>
+						<p>Is there a date when the when the event will occur:</p><input type="datetime" id="avocostime" name='tme'><br>
+						<p>How likely is it, that the event will occur in the next year in %:</p><input type='number' id="avocosrisk" name='risk'>
 					</div>
 				</br>
 
@@ -58,6 +61,8 @@
 			    <label for="increv">Increase Revenue</label>
 					<!--Hidden Input boxes that appear on clicking the radio are put here:-->
 					<div id="increvinput" style="display:none">
+						<p>How much is the revenue for a sale right now per week:</p><input type='number' id="slsnow" name='slsnow'><br>
+						<p>How many sales do you have per week:</p><input type='number' id="itmnow" name='itmnow'><br>
 						<p>How much will revenue increase in sales per week:</p><input type='number' id="increvsls" name='sls'><br>
 						<p>How many items can be sold per week:</p><input type='number' id="increvitm" name='itm'><br>
 					</div>

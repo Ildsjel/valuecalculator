@@ -40,9 +40,11 @@ function valueType() {
 	if (redcos.checked){
 		var manpower = document.getElementById("redcostotalppl").value;
 		var timespent = document.getElementById("redcostotalhrs").value;
+		var futuremanpower = document.getElementById("redcosfutureppl").value;
+		var futuretimespent = document.getElementById("redcostotalhrs").value;
 
 			if (manpower != 0){
-				var redcostotal = (manpower*25)*timespent; /*25 as multiplier is chosen, because a Full time employee earns approx that much an hour*/
+				var redcostotal = ((manpower*25)*timespent)-((futuremanpower*25)*futuretimespent); /*25 as multiplier is chosen, because a Full time employee earns approx that much an hour*/
 				}
 
 			else {
@@ -57,24 +59,27 @@ function valueType() {
 	else if (avocos.checked){
 		var totalcostavoided = document.getElementById("avocosttl").value;
 		var totalcosttime = document.getElementById("avocostime").value;
+		var risk = document.getElementById("avocosrisk").value;
 
 			if (totalcostavoided != 0){
-				var avocostotal = totalcostavoided;
+				var avocostotal = totalcostavoided * (risk * 52.14 / 100) / 100 ;
 				}
 			else {
 				console.log("Error");
 			}
-			document.getElementById("output").innerHTML=totalcostavoided;
+			document.getElementById("output").innerHTML=avocostotal;
 		}
 
 /*type increase revenue:*/
 
 	else if (increv.checked){
+		var revenueperweeknow = document.getElementById("slsnow").value;
+		var salesperweeknow = document.getElementById("itmnow").value;
 		var totalrevenueincrease = document.getElementById("increvsls").value;
 		var howmanysalesperweek = document.getElementById("increvitm").value;
 
 			if (totalrevenueincrease != 0){
-				var increvtotal = totalrevenueincrease*howmanysalesperweek;
+				var increvtotal = (totalrevenueincrease*howmanysalesperweek) - (revenueperweeknow*salesperweeknow);
 				}
 			else {
 				console.log("Error");
