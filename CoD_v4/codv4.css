@@ -16,17 +16,21 @@ h1 {
 /* I have to add different font styles the current ones look boring and weak*/
 
 .calculatorurl {
-	min-width: 350px;
+		min-width: 350px;
     min-height: 350px;
-    background-color: #ff7f50ba;
-    background-image: url();
+		width: 100%;
+		height: 100%;
+    background-image: url("/Users/jhoenscheid/Desktop/value_calc/CoD_v4/Value Calculator_files/redpolygonbackground.png");
 
 }
 
 .backlogurl {
-	min-width: 350px;
+		min-width: 350px;
     min-height: 350px;
-    background-color: #9d9eb3;
+		width: 100%;
+		height: 100%;
+		background-image: url("/Users/jhoenscheid/Desktop/value_calc/CoD_v4/Value Calculator_files/blackpolygon.jpg");
+		background-position: center;
 
 }
 
