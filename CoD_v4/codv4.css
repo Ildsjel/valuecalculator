@@ -39,7 +39,7 @@ h1 {
 	width: 200px;
 	height: 200px;
 	border-radius: 50%;
-	background-image: url(/Users/jhoenscheid/Desktop/Javascript_Learn/CoD_v4/media/goat.jpg);
+	background-image: url(media/goat.jpg);
 	background-size: cover;
 	background-position: -15px;
 	position: absolute;
@@ -54,7 +54,7 @@ h1 {
 	width: 200px;
 	height: 200px;
 	border-radius: 50%;
-	background-image: url(/Users/jhoenscheid/Desktop/Javascript_Learn/CoD_v4/media/elephant.jpg);
+	background-image: url(media/elephant.jpg);
 	background-size: cover;
 	background-position: -6px;
 	position: absolute;
