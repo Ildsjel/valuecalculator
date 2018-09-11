@@ -62,7 +62,7 @@ function valueType() {
 		var risk = document.getElementById("avocosrisk").value;
 
 			if (totalcostavoided != 0){
-				var avocostotal = totalcostavoided * (risk * 52.14 / 100) / 100 ;
+				var avocostotal = totalcostavoided /** (risk * 52.14 / 100)*/;
 				}
 			else {
 				console.log("Error");
