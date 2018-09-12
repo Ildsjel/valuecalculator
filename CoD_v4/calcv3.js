@@ -41,10 +41,12 @@ function valueType() {
 		var manpower = document.getElementById("redcostotalppl").value;
 		var timespent = document.getElementById("redcostotalhrs").value;
 		var futuremanpower = document.getElementById("redcosfutureppl").value;
-		var futuretimespent = document.getElementById("redcostotalhrs").value;
+		var futuretimespent = document.getElementById("redcosfuturehrs").value;
+		var currentstate = (manpower*timespent);
+		var goalstate = (futuremanpower*futuretimespent);
 
 			if (manpower != 0){
-				var redcostotal = ((manpower*25)*timespent)-((futuremanpower*25)*futuretimespent); /*25 as multiplier is chosen, because a Full time employee earns approx that much an hour*/
+				var redcostotal = currentstate-goalstate; /*25 as multiplier is chosen, because a Full time employee earns approx that much an hour*/
 				}
 
 			else {
