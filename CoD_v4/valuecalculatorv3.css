@@ -55,4 +55,13 @@ form {
   margin: 50px;
 }
 
+#output2 {
+  color: white;
+	position: relative;
+	font-family: "Ostrich Sans", sans-serif, bold;
+	font-size: 200px;
+	text-align: center;
+  margin: 50px;
+}
+
 /*Input fade in for invisible inputs like id= redcosinput*/

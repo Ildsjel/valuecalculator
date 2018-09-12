@@ -15,6 +15,7 @@
 		<!--<script type="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>-->
 
 
+
 	</head>
 	<body>
 		<div id="backgrounddiv">
@@ -27,7 +28,9 @@
   			<!--here is the table to get the user input about the type of value creation.-->
 
   				<script type="text/javascript" src="calcv3.js"></script>
-
+					<script type="text/javascript" src="collapseinputfields.js"></script>
+					<script src=https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.3.0/math.min.js></script> <!--This library is used to calculate probabilities-->
+					<script type="text/javascript" src="probcalc.js"></script>
 					<div id="radiobuttons">
 			  <fieldset>
 
@@ -52,7 +55,7 @@
 					<div id="avocosinput" style="display:none">
 						<p>How much will the cost be, if the event happens:</p> <input type='number' id="avocosttl" name='ttl'><br>
 						<p>Is there a date when the when the event will occur:</p><input type="datetime" id="avocostime" name='tme'><br>
-						<p>How likely is it, that the event will occur in the next year in %:</p><input type='number' id="avocosrisk" name='risk'>
+						<p>How likely is it, that the event will occur in the next month in %:</p><input type='number' id="avocosrisk" name='risk'>
 					</div>
 				</br>
 
@@ -86,11 +89,15 @@
 					<br>
 			    	<button type="button" id="confirmbutton" onclick="valueType()">confirm</button>
 				</br>
+				<br>
+					<button type="button" id="confirmbutton" onclick="calculateprobability()">probability</button>
+			</br>
 
 			  </fieldset>
 
 				<!--Output Element for calculations-->
 				<div id="output"></div>
+				<div id="output2"></div>
 	</form>
 </div>
 </main>

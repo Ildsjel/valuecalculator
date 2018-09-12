@@ -9,14 +9,15 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "jquery": "^3.3.1",
+    "math.js": "^1.1.43",
     "mongodb": "^3.1.4",
     "mongoose": "^5.2.14",
     "package.json": "^2.0.1"
   },
   "devDependencies": {},
   "scripts": {
-      "start": "node app.js",
-      "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
