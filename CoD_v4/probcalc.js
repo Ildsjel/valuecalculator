@@ -10,7 +10,7 @@ function calculateprobability () {
   console.log(roundedaffectedweeksofyear);
   var possiblecombinations = math.combinations(weeksperyear, roundedaffectedweeksofyear); /*calculates all combinations possible*/
   console.log(possiblecombinations);
-  var probability = (affectedweeksofyear / possiblecombinations) * 100; /*Laplace probability calc*/
+  var probability = (affectedweeksofyear / possiblecombinations) * 100; /*Laplace probability calc - Here it seems wrong. could be a bernoulli chain. needs research*/
   console.log(probability);
   var roundedprobability = (probability).toFixed(2); /*rounding of percentage to make it readable*/
   console.log(roundedprobability);
