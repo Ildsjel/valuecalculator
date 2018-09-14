@@ -6,18 +6,18 @@ function calculateprobability () {
   console.log(weeksperyear);
   var affectedweeksofyear = (riskpercentageperyear * weeksperyear) / 100;
   console.log(affectedweeksofyear);
-  var roundedaffectedweeksofyear = (affectedweeksofyear).toFixed(0); /*float needs to be cut for math function. otherwise it throws an execption*/
-  console.log(roundedaffectedweeksofyear);
-  var possiblecombinations = math.combinations(weeksperyear, roundedaffectedweeksofyear); /*calculates all combinations possible*/
-  console.log(possiblecombinations);
-  var probability = (affectedweeksofyear / possiblecombinations) * 100; /*Laplace probability calc - Here it seems wrong. could be a bernoulli chain. needs research*/
+  /* var roundedaffectedweeksofyear = (affectedweeksofyear).toFixed(0); /*float needs to be cut for math function. otherwise it throws an execption*/
+  /*console.log(roundedaffectedweeksofyear);*/
+  var probability = affectedweeksofyear / weeksperyear;
   console.log(probability);
-  var roundedprobability = (probability).toFixed(2); /*rounding of percentage to make it readable*/
-  console.log(roundedprobability);
+  var probabilitypercentage = (probability / weeksperyear) * 100;
+  console.log(probabilitypercentage);
+  var roundedprobabilitypercentage = (probabilitypercentage).toFixed(1);
+  console.log(roundedprobabilitypercentage);
 
     if (probability !=0){
 
-      document.getElementById("output2").innerHTML=roundedprobability;
+      document.getElementById("output2").innerHTML=roundedprobabilitypercentage;
     }
     else {
       console.log("error")
@@ -26,5 +26,13 @@ function calculateprobability () {
 
 /*
 n = total number of objects in the set / k = Number of objects in the subset for combinations
+for binominal distributions this could be helpful:
 
+
+var possiblecombinations = math.combinations(weeksperyear, roundedaffectedweeksofyear); /*calculates all combinations possible*/
+/* console.log(possiblecombinations);
+var probability = (affectedweeksofyear / possiblecombinations) * 100; /*Laplace probability calc - Here it seems wrong. could be a bernoulli chain. needs*/
+/* console.log(probability);
+var roundedprobability = (probability).toFixed(2); /*rounding of percentage to make it readable*/
+/* console.log(roundedprobability);
 */
