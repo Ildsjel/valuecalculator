@@ -2,7 +2,7 @@
 function calculateprobability () {
   var riskpercentageperyear = document.getElementById("avocosrisk").value; /*INPUT FIELD IN HTML*/
   console.log(riskpercentageperyear);
-  var weeksperyear = 52; /*The total number of objects is weeks per year which results always in 4 weeks per month*/
+  var weeksperyear = 52; /*The total number of objects is weeks per year which results always in 4 weeks per month. Are more accurate version calcs how many weeks are left for the current year*/
   console.log(weeksperyear);
   var affectedweeksofyear = (riskpercentageperyear * weeksperyear) / 100;
   console.log(affectedweeksofyear);
