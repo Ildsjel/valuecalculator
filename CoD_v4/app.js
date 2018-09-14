@@ -2,6 +2,9 @@
 
 const express = require("express");
 
+// db instance connection
+require("./config/db");
+
 const app = express();
 
 const port = process.env.PORT || 3301;
