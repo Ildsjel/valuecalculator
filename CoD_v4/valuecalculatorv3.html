@@ -12,7 +12,7 @@
 		<!--link to icon librabry-->
 		<link rel="stylesheet" href="./Value Calculator_files/font-awesome.min.css">
 		<!--link to angular-->
-		<!--<script type="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>-->
+		<script type="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>-->
 
 
 
@@ -36,7 +36,7 @@
 
 					<!--REDUCE COST OPTION-->
 			  	<br>
-			    <input type="radio" id="redcos" name="valuetype" value="redcos" onclick="valueTypeInput();">
+			    <input type="radio" id="redcos" name="valuetype" value="redcos" onclick="valueTypeInput();" method="post" action="/post_WSJF_item">
 			    <label for="redcos">Reduce Cost</label>
 					<!--Hidden Input boxes that appear on clicking the radio are put here:-->
 					<div id="redcosinput" style="display:none">
