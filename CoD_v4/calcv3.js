@@ -17,6 +17,8 @@ function valueType() {
 
 			if (manpower != 0){
 				var redcostotal = currentstate-goalstate;
+				console.log(currentstate-goalstate);
+				console.log(redcostotal);
 				}
 
 			else {
