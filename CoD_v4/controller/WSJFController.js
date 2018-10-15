@@ -21,7 +21,7 @@ exports.createWSJFItem = (req, res) => {
   });
 };
 
-/*
+
 
 exports.readWSJFItem = (req, body) => {
   WSJF.findById(req.params.WSJF_item_id, (err, task) => {
@@ -45,7 +45,7 @@ exports.updateWSJFitem = (req, res) => {
     }
   );
 };
-*/
+
 exports.deleteWSJFItem = (req, res) => {
   WSJF.remove({ _id: req.params.WSJF_item_id }, (err, task) => {
     if (err) {
