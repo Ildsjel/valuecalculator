@@ -13,10 +13,10 @@ require("./config/db");
 
 const app = express();
 
-const port = process.env.PORT || 3304;
+const port = process.env.PORT || 3305;
 var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:3304/node-demo");
+mongoose.connect("mongodb://localhost:3305/node-demo");
 app.use(bodyParser.urlencoded({ extended: true })); /*bodyParser is not defined: I NEED TO FIX THAT*/
 app.use(bodyParser.json());
 
