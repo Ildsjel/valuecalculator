@@ -5,8 +5,8 @@
   "auth": {
     "enable": false,
     "source": "admin",
-    "username": "",
-    "password": ""
+    "username": "johannes",
+    "password": "N3cr0m4ni4c666!"
   },
   "options": {}
 }
