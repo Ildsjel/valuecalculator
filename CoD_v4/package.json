@@ -7,7 +7,6 @@
     "airtable": "^0.5.6",
     "angular": "^1.7.3",
     "body-parser": "^1.18.3",
-    "express": "^4.16.4",
     "jquery": "^3.3.1",
     "math.js": "^1.1.43",
     "mongodb": "^3.1.4",

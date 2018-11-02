@@ -1,6 +1,10 @@
+//Make mongoose available
 const mongoose = require("mongoose");
+
+//Define the model
 const Schema = mongoose.Schema;
 
+//Define Schema
 const WSJFSchema = new Schema({
   itemName: {
     type: String,
