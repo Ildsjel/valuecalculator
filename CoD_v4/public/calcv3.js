@@ -24,7 +24,7 @@ function valueType() {
 			else {
 				console.log("Error");
 			}
-			document.getElementById("output").innerHTML=redcostotal;
+			document.getElementById("output").innerHTML=redcostotal+" EUR/h";
 
 }
 
@@ -41,7 +41,7 @@ function valueType() {
 			else {
 				console.log("Error");
 			}
-			document.getElementById("output").innerHTML=avocostotal;
+			document.getElementById("output").innerHTML=avocostotal +" EUR/h";;
 		}
 
 /*type increase revenue:*/
@@ -58,7 +58,7 @@ function valueType() {
 			else {
 				console.log("Error");
 			}
-			document.getElementById("output").innerHTML=increvtotal;
+			document.getElementById("output").innerHTML=increvtotal+" EUR/h";;
 		}
 
 /*type protect revenue*/
@@ -72,7 +72,7 @@ function valueType() {
 			else {
 				console.log("Error")
 			}
-			document.getElementById("output").innerHTML=totalrevenueprotected;
+			document.getElementById("output").innerHTML=totalrevenueprotected+" EUR/h";;
 		}
 
 /*break*/

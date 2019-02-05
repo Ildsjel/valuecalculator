@@ -17,7 +17,7 @@ function calculateprobability () {
 
     if (probability !=0){
 
-      document.getElementById("output2").innerHTML=roundedprobabilitypercentage;
+      document.getElementById("output2").innerHTML=roundedprobabilitypercentage+ "% probability for next week";
     }
     else {
       console.log("error")
