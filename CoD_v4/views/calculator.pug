@@ -13,12 +13,12 @@ head
     script(src='/public/javascripts/calcv3.js')
 #backgrounddiv
     main#main
-        form#valueTypeForm(action='/post_WSJF_item', method='post')
+        form#valueTypeForm(method='POST', action='/post_WSJF_item' )
             h1 What kind of value do you expect from your project?
             // here is the table to get the user input about the type of value creation.
             script(src='/public/javascripts/calcv3.js')
             script(src='/public/javascripts/collapseinputfields.js')
-            script(src='https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.3.0/math.min.js')
+
             // This library is used to calculate probabilities
             script(src='/public/javascripts/probcalc.js')
             #radiobuttons
@@ -90,10 +90,13 @@ head
                     br
             // Confirm Button to start calculation
             br
-            button#confirmbutton(type='button', onclick='valueType()') confirm
+            button#confirmbutton(type='button', onclick='valueType()') calculate
             br
             br
             button#confirmbutton(type='button', onclick='calculateprobability()') probability
+            br
+            br
+            button#confirmbutton(type='submit', value='redcostotal', onclick='send') save
             br
             // Output Element for calculations
             #output

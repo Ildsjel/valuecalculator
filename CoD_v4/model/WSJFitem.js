@@ -12,23 +12,23 @@ const WSJFSchema = new Schema({
   },
   redcostotalppl: {
     type: Number,
-    required: true
+    required: false
   },
   redcostotalhrs: {
     type: Number,
-    required: true
+    required: false
   },
   redcosfutureppl: {
     type: Number,
-    required: true
+    required: false
   },
   redcosfuturehrs: {
     type: Number,
-    required: true
+    required: false
   },
   redcostotal: {
     type: Number,
-    required: true
+    required: false
   },
 });
 
