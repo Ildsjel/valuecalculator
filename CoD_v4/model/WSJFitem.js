@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const WSJFSchema = new Schema({
   itemName: {
     type: String,
-    required: true
+    required: false
   },
   createdOn: {
     type: Date,

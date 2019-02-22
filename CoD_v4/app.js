@@ -2,7 +2,6 @@
 
 var express = require("express"); /*express = Uncaught reference error - Needs to be fixed*/
 var bodyParser = require("body-parser");
-var taskController = require("./controller/TaskController");
 var WSJFController = require("./controller/WSJFController");
 
 
@@ -12,35 +11,33 @@ var WSJFController = require("./controller/WSJFController");
 require("./config/db");
 
 const app = express();
+app.use('/public', express.static(__dirname + '/public'));
 
 const port = process.env.PORT || 3305;
 var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:3305/node-demo");
+mongoose.connect("mongodb://localhost:3305/");
 app.use(bodyParser.urlencoded({ extended: true })); /*bodyParser is not defined: I NEED TO FIX THAT*/
 app.use(bodyParser.json());
 
-// API ENDPOINTS
+//views engine
+app.set('views engine', 'pug');
+
+
+
+// API ENDPOINTS/routes
 
 app
-  .route("/tasks")
-  .get(taskController.listAllTasks)
-  .post(taskController.createNewTask);
+    .route('/')
+    .get(function (req, res) {
+      res.render('calculator.pug');
+    });
 
-app
-  .route("/tasks/:taskid")
-  .get(taskController.readTask)
-  .put(taskController.updateTask)
-  .delete(taskController.deleteTask);
-/* I NEED TO FINISH THIS. I CREATED A FILE CALLED WSJFitem.js in the model folder to define the model and pass the form data in the mongodb. The model route is defined in the html file in the form as action attribute
-  */
 app
     .route("/post_WSJF_item")
     .get(WSJFController.listAllWSJFtems)
     .post(WSJFController.createWSJFItem);
-    /*
-    .post(WSJFController.createWSJFitem)
-    .delete(WSJFController.deleteWSJFitem);
+    //.delete(WSJFController.deleteWSJFitem);
 
 /*
 app
