@@ -1,11 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const WSJFSchema = new Schema({
-  itemName: {
-    type: String,
-    required: false
-  },
+const WSJF = new Schema({
   createdOn: {
     type: Date,
     default: Date.now
@@ -27,9 +23,9 @@ const WSJFSchema = new Schema({
     required: false
   },
   redcostotal: {
-    type: Number,
+    type: String,
     required: false
   },
 });
 
-module.exports = mongoose.model("WSJF", WSJFSchema);
+module.exports = mongoose.model("WSJF", WSJF);

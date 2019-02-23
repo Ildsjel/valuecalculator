@@ -25,6 +25,7 @@ function valueType() {
 				console.log("Error");
 			}
 			document.getElementById("output").innerHTML=redcostotal;
+			console.log(redcostotal);
 
 }
 

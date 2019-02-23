@@ -1,11 +1,11 @@
 // app.js
 
-var express = require("express"); /*express = Uncaught reference error - Needs to be fixed*/
-var bodyParser = require("body-parser");
-var WSJFController = require("./controller/WSJFController");
+const express = require("express");
+const bodyParser = require("body-parser");
 
-
-
+const WSJFController = require("./controller/WSJFController");
+const path = require('path');
+const createError = require('http-errors');
 
 // db instance connection
 require("./config/db");
@@ -22,6 +22,9 @@ app.use(bodyParser.json());
 
 //views engine
 app.set('views engine', 'pug');
+
+//middleware for requests
+
 
 
 
