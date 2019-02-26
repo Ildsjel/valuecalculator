@@ -24,10 +24,16 @@ function valueType() {
 			else {
 				console.log("Error");
 			}
-			document.getElementById("output").innerHTML=redcostotal;
-			console.log(redcostotal);
+			document.getElementById("redcostotal").innerHTML=redcostotal;
+			return redcostotal;
+
+
+
 
 }
+
+
+
 
 /*type cost avoided*/
 
@@ -81,3 +87,5 @@ function valueType() {
 		console.log("Error");
 		}
 }
+
+export * from "calcv3";

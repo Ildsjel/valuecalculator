@@ -17,7 +17,7 @@ const port = process.env.PORT || 3305;
 var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost:3305/");
-app.use(bodyParser.urlencoded({ extended: true })); /*bodyParser is not defined: I NEED TO FIX THAT*/
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //views engine

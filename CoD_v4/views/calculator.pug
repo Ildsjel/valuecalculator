@@ -43,6 +43,7 @@ head
                             | How many hours will the process be worked be worked on per person per week, when the solution is finished:
                         input#redcosfuturehrs(type='number', name='redcosfuturehrs')
                     br
+                    script(language='javascript', type='text/javascript').
                     // AVOID COST OPTION
                     br
                     input#avocos(type='radio', name='valuetype', value='Avoid Cost', onclick='valueTypeInput();')
@@ -96,10 +97,10 @@ head
             button#confirmbutton(type='button', onclick='calculateprobability()') probability
             br
             br
-            button#confirmbutton(type='submit', value='calculateprobability()', onclick='send', name='redcostotal') save
+            button#confirmbutton(type='submit', onclick='valueType()') save
             br
 
             // Output Element for calculations
-            #output
+            #redcostotal
             #output2
 
