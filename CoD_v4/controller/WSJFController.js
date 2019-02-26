@@ -2,16 +2,18 @@ const WSJF = require("../model/WSJFitem");
 
 //TODO sanitizing and trimming needs to be applied at a certain point
 
-/*
-exports.listAllWSJFtems = (req, res) => {
+//display a list of all WSJF Items
+
+exports.listAllWSJFItems = (req, res) => {
   WSJF.find({}, (err, task) => {
     if (err) {
       res.status(500).send(err);
     }
+     //res.render('calculatorDisplayAllItems.pug', {WSJFList: task});
     res.status(200).json(task);
   });
 };
-*/
+
 
 
 
@@ -29,13 +31,15 @@ exports.createWSJFItem = (req, res, next) => {
     if (err) {
       res.status(500).send(err);
     }
-    res.status(201).json(task);
+    res.redirect('/');
     console.log(task);
   });
 };
 
 
 
+
+//detailview for a WSJF Item
 /*
 exports.readWSJFItem = (req, body) => {
   WSJF.findById(req.params.WSJF_item_id, (err, task) => {

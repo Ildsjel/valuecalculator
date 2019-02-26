@@ -1,18 +1,6 @@
-head
-    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title Value Calculator
-    // Import additional fonts
-    link(href='../public/stylesheets/css', rel='stylesheet', type='text/css')
-    // link to stylesheet
-    link(rel='stylesheet', type='text/css', href='/public/stylesheets/valuecalculatorv3.css')
-    // link to icon librabry
-    link(rel='stylesheet', href='/public/stylesheets/font-awesome.min.css')
-    // link to angular
-    script(type='https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js').
-    script(src='/public/javascripts/calcv3.js')
-#backgrounddiv
-    main#main
+extends layout
+
+block content
         form#valueTypeForm(method='POST', action='/post_WSJF_item' )
             h1 What kind of value do you expect from your project?
             // here is the table to get the user input about the type of value creation.
@@ -90,9 +78,6 @@ head
                     br
                     br
             // Confirm Button to start calculation
-            br
-            button#confirmbutton(type='button', onclick='valueType()') calculate
-            br
             br
             button#confirmbutton(type='button', onclick='calculateprobability()') probability
             br

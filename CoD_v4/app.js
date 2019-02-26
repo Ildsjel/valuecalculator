@@ -36,9 +36,10 @@ app
 
 app
     .route("/post_WSJF_item")
-    //.get(WSJFController.listAllWSJFtems)
+    .get(WSJFController.listAllWSJFItems)
     .post(WSJFController.createWSJFItem);
     //.delete(WSJFController.deleteWSJFitem);
+
 
 /*
 app

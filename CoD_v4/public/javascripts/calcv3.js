@@ -1,5 +1,5 @@
 /*function to get value type*/
-
+//TODO replace all this logic with mongoose set functions and delete it
 function valueType() {
 
 	/*case 1 - needs to be a Switch Statement -

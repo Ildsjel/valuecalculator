@@ -12,35 +12,34 @@ const WSJF = new Schema({
   },
   redcostotalppl: {
     type: Number,
-    required: false
+    required: true
   },
   redcostotalhrs: {
     type: Number,
-    required: false
+    required: true
   },
   redcosfutureppl: {
     type: Number,
-    required: false
+    required: true
   },
   redcosfuturehrs: {
     type: Number,
-    required: false
+    required: true
   },
   redcostotal: {
     type: Number,
       set: function() {
-        //TODO this won't work that way. Can't be strings. But as strings references are recognized
-          // TODO because the names are stored as strings in pug. But the references are also not found;
-          let currentstate = this.redcosfutureppl * 25 * this.redcostotalhrs;
+        //Cost of delay calculation: (people*hrs/cost now) - (people*hrs/cost in future) = Cost of delay for auomtating
+            let currentstate = (this.redcostotalppl * 25) * this.redcostotalhrs;
          console.log(currentstate);
-         let goalstate = this.redcosfutureppl * 25 * this.redcosfuturehrs;
+         let goalstate = (this.redcosfutureppl * 25) * this.redcosfuturehrs;
          console.log(goalstate);
          let redcostotal = currentstate - goalstate;
          console.log(redcostotal);
 
          return redcostotal;
       },
-    required: false
+    required: true
   },
 });
 
