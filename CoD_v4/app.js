@@ -1,16 +1,14 @@
 // app.js
-
 const express = require("express");
+const app = express();
 const bodyParser = require("body-parser");
-
 const WSJFController = require("./controller/WSJFController");
-const path = require('path');
-const createError = require('http-errors');
+
 
 // db instance connection
 require("./config/db");
 
-const app = express();
+
 app.use('/public', express.static(__dirname + '/public'));
 
 const port = process.env.PORT || 3305;
@@ -20,7 +18,7 @@ mongoose.connect("mongodb://localhost:3305/");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//views engine
+//here we define the views engine. we will use pug
 app.set('views engine', 'pug');
 
 //middleware for requests
@@ -38,7 +36,7 @@ app
 
 app
     .route("/post_WSJF_item")
-    .get(WSJFController.listAllWSJFtems)
+    //.get(WSJFController.listAllWSJFtems)
     .post(WSJFController.createWSJFItem);
     //.delete(WSJFController.deleteWSJFitem);
 

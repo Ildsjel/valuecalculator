@@ -1,9 +1,6 @@
 const WSJF = require("../model/WSJFitem");
-const { body, validationResult } = require('express-validator/check');
-const {sanitizeBody} = require('express-validator/filter');
 
-sanitizeBody('name').trim().escape(),
-    sanitizeBody('date').toDate(),
+//TODO sanitizing and trimming needs to be applied at a certain point
 
 /*
 exports.listAllWSJFtems = (req, res) => {
