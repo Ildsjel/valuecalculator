@@ -1,0 +1,15 @@
+extends layout
+
+block content
+
+    table#desc
+
+    ul
+        each WSJF in WSJFList
+            li
+                p(string=WSJF.createdOn) #{WSJF.redcostotal}
+
+        else
+            li There are no Items.
+
+
