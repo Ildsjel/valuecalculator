@@ -22,6 +22,22 @@ form {
   margin: 70px;
 }
 
+p {
+    color: white;
+    position: inherit;
+    font-family: "Ostrich Sans", sans-serif, bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+a {
+    color: white;
+    position: inherit;
+    font-family: "Ostrich Sans", sans-serif, bold;
+    font-size: 20px;
+    text-align: center;
+}
+
 #radiobuttons{
   margin:70px;
   position: inherit;

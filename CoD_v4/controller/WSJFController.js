@@ -9,8 +9,8 @@ exports.listAllWSJFItems = (req, res) => {
     if (err) {
       res.status(500).send(err);
     }
-     //res.render('calculatorDisplayAllItems.pug', {WSJFList: task});
-    res.status(200).json(task);
+    res.render('calculatorDisplayAllItems.pug', {WSJFList: task});
+   //res.status(200).json(task);
   });
 };
 
