@@ -10,6 +10,10 @@ const WSJF = new Schema({
     type: Date,
     default: Date.now
   },
+  itemName: {
+      type: String,
+      required: false
+  },
   redcostotalppl: {
     type: Number,
     required: true

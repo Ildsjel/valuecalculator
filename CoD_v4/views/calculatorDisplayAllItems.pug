@@ -7,9 +7,10 @@ block content
     ul
         each WSJF in WSJFList
             li
-                p(string=WSJF.createdOn) #{WSJF.redcostotal}
+                a#listItem(string=WSJF) #{WSJF.itemName}: #{WSJF.redcostotal}
 
         else
-            li There are no Items.
+            li
+            a There are no Items
 
 

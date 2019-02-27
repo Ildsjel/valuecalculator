@@ -11,6 +11,9 @@ block content
             script(src='/public/javascripts/probcalc.js')
             #radiobuttons
                 fieldset
+                    p Give your Task a name
+                    input#itemName(type='text' name='itemName')
+                    br
                     // REDUCE COST OPTION
                     br
                     input#redcos(type='radio', name='valuetype', value='redcos', onclick='valueTypeInput();')

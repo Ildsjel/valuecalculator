@@ -10,7 +10,6 @@ exports.listAllWSJFItems = (req, res) => {
       res.status(500).send(err);
     }
     res.render('calculatorDisplayAllItems.pug', {WSJFList: task});
-   //res.status(200).json(task);
   });
 };
 
@@ -21,6 +20,7 @@ exports.listAllWSJFItems = (req, res) => {
 exports.createWSJFItem = (req, res, next) => {
   let newTask = new WSJF (
       {
+          itemName: req.body.itemName,
           redcostotalppl: req.body.redcostotalppl,
           redcostotalhrs: req.body.redcostotalhrs,
           redcosfutureppl: req.body.redcosfutureppl,
@@ -31,7 +31,7 @@ exports.createWSJFItem = (req, res, next) => {
     if (err) {
       res.status(500).send(err);
     }
-    res.redirect('/');
+    res.redirect('/post_WSJF_item');
     console.log(task);
   });
 };
