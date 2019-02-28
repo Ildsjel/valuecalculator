@@ -1,0 +1,13 @@
+extends layout
+
+block content
+
+    h1 Name: #{WSJF.itemName}
+    li
+        a #[strong Current Process Values:]
+            a#listItem(string=WSJF) People on Process: #{WSJF.redcostotalppl} Hours spent per Week: #{WSJF.redcostotalhrs}
+        a #[strong Goal Process Values:]
+            a#listItem(string=WSJF) People on Process: #{WSJF.redcosfutureppl} Hours spent per Week:  #{WSJF.redcosfuturehrs}
+        a #[Total cost reduction per Week:]
+            a#listItem(string=WSJF) Total cost reduction per Week #{WSJF.redcostotal}
+

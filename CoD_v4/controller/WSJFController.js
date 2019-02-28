@@ -16,7 +16,7 @@ exports.listAllWSJFItems = (req, res) => {
 
 
 
-//old implementation
+//create a new Item
 exports.createWSJFItem = (req, res, next) => {
   let newTask = new WSJF (
       {
@@ -40,15 +40,17 @@ exports.createWSJFItem = (req, res, next) => {
 
 
 //detailview for a WSJF Item
-/*
-exports.readWSJFItem = (req, body) => {
+
+exports.listWSJFItem = (req, res) => {
   WSJF.findById(req.params.WSJF_item_id, (err, task) => {
     if (err) {
       res.status(500).send(err);
     }
-    res.status(200).json(task);
+      res.render('calculatorDisplayItem.pug', {WSJF: task});
   });
-}; */
+};
+
+//Update an item
 
 /*
 exports.updateWSJFitem = (req, res) => {

@@ -41,9 +41,13 @@ app
     //.delete(WSJFController.deleteWSJFitem);
 
 
-/*
+
 app
-  .route("/post_WSJF_item/:WSJF_item_id") */
+  .route("/post_WSJF_item/:WSJF_item_id")
+    .get(WSJFController.listWSJFItem);
+
+
+
 
 
 
