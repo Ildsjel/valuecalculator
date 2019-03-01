@@ -2,7 +2,9 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const router = express.Router();
 const WSJFController = require("./controller/WSJFController");
+
 
 
 // db instance connection
@@ -10,6 +12,7 @@ require("./config/db");
 
 
 app.use('/public', express.static(__dirname + '/public'));
+app.use(router);
 
 const port = process.env.PORT || 3305;
 var mongoose = require("mongoose");
@@ -25,7 +28,6 @@ app.set('views engine', 'pug');
 
 
 
-
 // API ENDPOINTS/routes
 
 app
@@ -38,13 +40,16 @@ app
     .route("/post_WSJF_item")
     .get(WSJFController.listAllWSJFItems)
     .post(WSJFController.createWSJFItem);
-    //.delete(WSJFController.deleteWSJFitem);
-
 
 
 app
-  .route("/post_WSJF_item/:WSJF_item_id")
+    .route("/:WSJF_item_id")
+    //.delete(WSJFController.deleteWSJFItem)
     .get(WSJFController.listWSJFItem);
+
+app
+    .route("/:WSJF_item_id/update")
+    .post(WSJFController.updateWSJFitem);
 
 
 

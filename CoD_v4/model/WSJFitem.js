@@ -45,6 +45,23 @@ const WSJF = new Schema({
       },
     required: true
   },
+  estimationValue: {
+    type: Number,
+    required: false
+  },
+    WSJFValue: {
+      type: String,
+        set: function() {
+          let WSJFValue = this.redcostotal / this.estimationValue;
+          let redcostotal = this.redcostotal;
+          let estimationValue = this.estimationValue;
+          console.log(redcostotal);
+          console.log(estimationValue);
+          console.log(WSJFValue);
+            return WSJFValue
+        },
+    required: false
+    }
 });
 
 

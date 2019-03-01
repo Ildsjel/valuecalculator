@@ -14,9 +14,8 @@ exports.listAllWSJFItems = (req, res) => {
 };
 
 
-
-
 //create a new Item
+
 exports.createWSJFItem = (req, res, next) => {
   let newTask = new WSJF (
       {
@@ -25,7 +24,7 @@ exports.createWSJFItem = (req, res, next) => {
           redcostotalhrs: req.body.redcostotalhrs,
           redcosfutureppl: req.body.redcosfutureppl,
           redcosfuturehrs: req.body.redcosfuturehrs,
-          redcostotal: req.body.redcostotal
+          redcostotal: req.body.redcostotal,
       });
   newTask.save((err, task) => {
     if (err) {
@@ -37,28 +36,29 @@ exports.createWSJFItem = (req, res, next) => {
 };
 
 
-
-
 //detailview for a WSJF Item
 
 exports.listWSJFItem = (req, res) => {
-  WSJF.findById(req.params.WSJF_item_id, (err, task) => {
+  WSJF.findById(req.params.WSJF_item_id, (err, task, next) => {
     if (err) {
       res.status(500).send(err);
     }
-      res.render('calculatorDisplayItem.pug', {WSJF: task});
+      res.render('calculatorDisplayItem.pug', {WSJF: task});;
   });
 };
 
+
 //Update an item
 
-/*
 exports.updateWSJFitem = (req, res) => {
-  WSJF.findOneAndUpdate(
-    { _id: req.params.WSJF_item_id },
-    req.body,
-    { new: true },
-    (err, task) => {
+
+    let newTask = (
+        {
+            _id: req.params.WSJF_item_id,
+            estimationValue: req.body.estimationValue,
+        });
+    console.log(newTask);
+    WSJF.findByIdAndUpdate(req.params.WSJF_item_id, newTask, {}, function (err, task) {
       if (err) {
         res.status(500).send(err);
       }
@@ -67,12 +67,14 @@ exports.updateWSJFitem = (req, res) => {
   );
 };
 
+
+//delete an item
+/*
 exports.deleteWSJFItem = (req, res) => {
   WSJF.remove({ _id: req.params.WSJF_item_id }, (err, task) => {
     if (err) {
       res.status(404).send(err);
     }
-    res.status(200).json({ message: "Task successfully deleted" });
+    res.status(200).json(task);
   });
-};
- */
+}; */

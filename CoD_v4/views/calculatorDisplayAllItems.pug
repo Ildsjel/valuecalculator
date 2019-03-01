@@ -7,7 +7,7 @@ block content
     ul
         each WSJF in WSJFList
             li
-                a#listItem(string=WSJF) #{WSJF.itemName}: #{WSJF.redcostotal}
+                a#listItem(href=WSJF.id) #{WSJF.itemName}: #{WSJF.redcostotal} EUR/week
 
         else
             li

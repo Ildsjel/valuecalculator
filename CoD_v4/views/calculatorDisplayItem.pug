@@ -5,9 +5,18 @@ block content
     h1 Name: #{WSJF.itemName}
     li
         a #[strong Current Process Values:]
-            a#listItem(string=WSJF) People on Process: #{WSJF.redcostotalppl} Hours spent per Week: #{WSJF.redcostotalhrs}
+            a#listItem(string=WSJF) People on Process: #{WSJF.redcostotalppl} People
+            a#listItem(string=WSJF) Hours spent per Week: #{WSJF.redcostotalhrs} hours
         a #[strong Goal Process Values:]
-            a#listItem(string=WSJF) People on Process: #{WSJF.redcosfutureppl} Hours spent per Week:  #{WSJF.redcosfuturehrs}
-        a #[Total cost reduction per Week:]
-            a#listItem(string=WSJF) Total cost reduction per Week #{WSJF.redcostotal}
+            a#listItem(string=WSJF) People on Process: #{WSJF.redcosfutureppl} People
+            a#listItem(string=WSJF) Hours spent per Week:  #{WSJF.redcosfuturehrs} hours
+        a #[strong Total cost reduction per Week:]
+            a#listItem(string=WSJF) Total cost reduction per Week: #{WSJF.redcostotal} EUR/week
+
+        form(method='POST', action= WSJF._id+'/update')
+
+           a #[strong Add an estimation on how many weeks you expect the project to endure until completion: ]
+           input#estimationValue(type='number' name='estimationValue')
+
+           button#confirmbutton(type='submit') Add Time to Completion
 
