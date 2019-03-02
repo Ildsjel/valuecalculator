@@ -12,11 +12,10 @@ block content
             a#listItem(string=WSJF) Hours spent per Week:  #{WSJF.redcosfuturehrs} hours
         a #[strong Total cost reduction per Week:]
             a#listItem(string=WSJF) Total cost reduction per Week: #{WSJF.redcostotal} EUR/week
+        a #[strong Project duration:]
+            a#listItem(string=WSJF) Estimated time in weeks to complete the task: #{WSJF.estimationValue} weeks
+        a #[strong Value/Time Efficiency Ratio (The higher the better)]
+            a#listItem(string=WSJF) #{WSJF.WSJFValue}
 
-        form(method='POST', action= WSJF._id+'/update')
 
-           a #[strong Add an estimation on how many weeks you expect the project to endure until completion: ]
-           input#estimationValue(type='number' name='estimationValue')
-
-           button#confirmbutton(type='submit') Add Time to Completion
 

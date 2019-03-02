@@ -33,7 +33,13 @@ app.set('views engine', 'pug');
 app
     .route('/')
     .get(function (req, res) {
-      res.render('calculator.pug');
+      res.render('index.pug');
+    });
+
+app
+    .route('/calculator')
+    .get(function (req, res) {
+        res.render('calculator.pug');
     });
 
 app
@@ -45,11 +51,13 @@ app
 app
     .route("/:WSJF_item_id")
     //.delete(WSJFController.deleteWSJFItem)
-    .get(WSJFController.listWSJFItem);
+    .get(WSJFController.listWSJFItem)
+    .post(WSJFController.updateWSJFitem);
+
 
 app
-    .route("/:WSJF_item_id/update")
-    .post(WSJFController.updateWSJFitem);
+  //  .route("/:WSJF_item_id/update")
+
 
 
 

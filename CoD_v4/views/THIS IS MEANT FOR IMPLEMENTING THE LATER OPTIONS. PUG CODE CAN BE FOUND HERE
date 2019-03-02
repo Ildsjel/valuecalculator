@@ -1,0 +1,61 @@
+extends layout
+
+block content
+        form#valueTypeForm(method='POST', action='/post_WSJF_item' )
+            h1 What kind of value do you expect from your project?
+            // here is the table to get the user input about the type of value creation.
+            script(src='/public/javascripts/calcv3.js')
+            script(src='/public/javascripts/collapseinputfields.js')
+
+            // This library is used to calculate probabilities
+            script(src='/public/javascripts/probcalc.js')
+            #radiobuttons
+                fieldset
+                    p Give your Task a name
+                    input#itemName(type='text' name='itemName')
+                    br
+                // AVOID COST OPTION
+                                    br
+                                    input#avocos(type='radio', name='valuetype', value='Avoid Cost', onclick='valueTypeInput();')
+                                    label(for='avocos') Avoid Cost
+                                    // Hidden Input boxes that appear on clicking the radio are put here:
+                                    #avocosinput(style='display:none;')
+                                        p How much will the cost be, if the event happens:
+                                        input#avocosttl(type='number', name='ttl')
+                                        br
+                                        p Is there a date when the when the event will occur:
+                                        input#avocostime(type='datetime', name='tme')
+                                        br
+                                        p How likely is it, that the event will occur in the next year in %:
+                                        input#avocosrisk(type='number', name='risk')
+                                    br
+                                    // INCREASE REVENUE OPTION
+                                    br
+                                    input#increv(type='radio', name='valuetype', value='Increase Revenue', onclick='valueTypeInput();')
+                                    label(for='increv') Increase Revenue
+                                    // Hidden Input boxes that appear on clicking the radio are put here:
+                                    #increvinput(style='display:none;')
+                                        p How much is the revenue for a sale right now per week:
+                                        input#slsnow(type='number', name='slsnow')
+                                        br
+                                        p How many sales do you have per week:
+                                        input#itmnow(type='number', name='itmnow')
+                                        br
+                                        p How much will revenue increase in sales per week:
+                                        input#increvsls(type='number', name='sls')
+                                        br
+                                        p How many items can be sold per week:
+                                        input#increvitm(type='number', name='itm')
+                                        br
+                                    br
+                                    // PROTECT REVENUE OPTION
+                                    br
+                                    input#prorev(type='radio', name='valuetype', value='Protect Revenue', onclick='valueTypeInput();')
+                                    label(for='prorev') Protect Revenue
+                                    // Hidden Input boxes that appear on clicking the radio are put here:
+                                    #prorevinput(style='display:none;')
+                                        p How much revenue will be protected each week:
+                                        input#prorevwek(type='number', name='wek')
+                                        br
+                                    br
+                                    br

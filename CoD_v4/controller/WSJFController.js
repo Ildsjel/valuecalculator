@@ -25,6 +25,8 @@ exports.createWSJFItem = (req, res, next) => {
           redcosfutureppl: req.body.redcosfutureppl,
           redcosfuturehrs: req.body.redcosfuturehrs,
           redcostotal: req.body.redcostotal,
+          estimationValue: req.body.estimationValue,
+          WSJFValue: req.body.WSJFValue
       });
   newTask.save((err, task) => {
     if (err) {
@@ -62,7 +64,7 @@ exports.updateWSJFitem = (req, res) => {
       if (err) {
         res.status(500).send(err);
       }
-      res.status(200).json(task);
+        res.render('calculatorDisplayItem.pug', {WSJF: task});;
     }
   );
 };
