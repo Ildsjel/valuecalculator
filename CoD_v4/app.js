@@ -7,6 +7,7 @@ const WSJFController = require("./controller/WSJFController");
 
 
 
+
 // db instance connection
 require("./config/db");
 
@@ -29,33 +30,38 @@ app.set('views engine', 'pug');
 
 
 // API ENDPOINTS/routes
-
+//index page
 app
     .route('/')
     .get(function (req, res) {
       res.render('index.pug');
     });
-
+//avoid cost calc
 app
     .route('/calculator')
     .get(function (req, res) {
         res.render('calculator.pug');
     });
-
+//post a new avoid cost item & list all items
 app
     .route("/post_WSJF_item")
     .get(WSJFController.listAllWSJFItems)
     .post(WSJFController.createWSJFItem);
 
-
+//get a specific item and update a specific item
 app
     .route("/:WSJF_item_id")
     //.delete(WSJFController.deleteWSJFItem)
     .get(WSJFController.listWSJFItem)
     .post(WSJFController.updateWSJFitem);
 
+//user route
+//app
+    //.route("/user/create")
 
-app
+
+
+//app
   //  .route("/:WSJF_item_id/update")
 
 

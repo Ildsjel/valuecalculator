@@ -2,11 +2,13 @@ extends layout
 
 block content
         form#valueTypeForm(method='POST', action='/post_WSJF_item' )
-            h1 What kind of value do you expect from your project?
             // here is the table to get the user input about the type of value creation.
             script(src='/public/javascripts/calcv3.js')
             script(src='/public/javascripts/collapseinputfields.js')
-
+            if errors
+                    ul.alert
+                        for error in errors
+                            li!= error.msg
             #radiobuttons
                 fieldset
                     p Give your Task a name
@@ -34,7 +36,4 @@ block content
             button#confirmbutton(type='submit') save
             br
 
-            // Output Element for calculations
-            #redcostotal
-            #output2
 

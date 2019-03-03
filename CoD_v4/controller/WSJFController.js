@@ -1,4 +1,6 @@
 const WSJF = require("../model/WSJFitem");
+const { body,validationResult } = require('express-validator/check');
+const { sanitizeBody } = require('express-validator/filter');
 
 //TODO sanitizing and trimming needs to be applied at a certain point
 
@@ -16,7 +18,24 @@ exports.listAllWSJFItems = (req, res) => {
 
 //create a new Item
 
-exports.createWSJFItem = (req, res, next) => {
+exports.createWSJFItem = [
+    //Validate that fields are not empty
+    body('itemName', 'Genre name required').isLength({ min: 1 }).trim(),
+    body('redcostotalppl', 'People involved required').isLength({ min: 1}).trim(),
+    body('redcostotalhrs', 'Hours involved required').isLength({ min: 1}).trim(),
+    body('redcosfutureppl', 'Future people involved required').isLength({ min: 1}).trim(),
+    body('redcosfuturehrs', 'Future hours involved required').isLength({ min: 1}).trim(),
+    body('estimationValue', 'Please enter Time to Completion').isLength({ min: 1}).trim(),
+
+    //Sanitize and trim itemName Field
+    sanitizeBody('itemName').trim().escape(),
+
+    //Process Request
+    (req, res, next) => {
+
+    //extract errors from validation
+        const errors = validationResult(req);
+
   let newTask = new WSJF (
       {
           itemName: req.body.itemName,
@@ -28,6 +47,13 @@ exports.createWSJFItem = (req, res, next) => {
           estimationValue: req.body.estimationValue,
           WSJFValue: req.body.WSJFValue
       });
+
+    if (!errors.isEmpty()) {
+        //there are errors = rerender form with error messages
+        res.render('calculator.pug', {title: 'Create Genre', task: newTask, errors: errors.array()});
+        return;
+    }
+
   newTask.save((err, task) => {
     if (err) {
       res.status(500).send(err);
@@ -35,7 +61,8 @@ exports.createWSJFItem = (req, res, next) => {
     res.redirect('/post_WSJF_item');
     console.log(task);
   });
-};
+}
+];
 
 
 //detailview for a WSJF Item

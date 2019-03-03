@@ -2,15 +2,15 @@ extends layout
 
 block content
 
+
+
     table#desc
 
-    ul
         each WSJF in WSJFList
             li
-                a#listItem(href=WSJF.id) #{WSJF.itemName}: #{WSJF.redcostotal} EUR/week // Estimated duration: #{WSJF.estimationValue} Weeks = Time/Value Efficiency: #{WSJF.WSJFValue}
+            a#listItem(href=WSJF.id) #[strong #{WSJF.itemName}] // Value: #{WSJF.redcostotal} // Duration: #{WSJF.estimationValue} Weeks = Time/Value Efficiency: #[#{WSJF.WSJFValue}]
 
         else
             li
             a There are no Items
-
 

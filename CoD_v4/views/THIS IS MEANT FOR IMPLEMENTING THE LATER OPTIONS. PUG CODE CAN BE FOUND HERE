@@ -15,20 +15,7 @@ block content
                     input#itemName(type='text' name='itemName')
                     br
                 // AVOID COST OPTION
-                                    br
-                                    input#avocos(type='radio', name='valuetype', value='Avoid Cost', onclick='valueTypeInput();')
-                                    label(for='avocos') Avoid Cost
-                                    // Hidden Input boxes that appear on clicking the radio are put here:
-                                    #avocosinput(style='display:none;')
-                                        p How much will the cost be, if the event happens:
-                                        input#avocosttl(type='number', name='ttl')
-                                        br
-                                        p Is there a date when the when the event will occur:
-                                        input#avocostime(type='datetime', name='tme')
-                                        br
-                                        p How likely is it, that the event will occur in the next year in %:
-                                        input#avocosrisk(type='number', name='risk')
-                                    br
+
                                     // INCREASE REVENUE OPTION
                                     br
                                     input#increv(type='radio', name='valuetype', value='Increase Revenue', onclick='valueTypeInput();')

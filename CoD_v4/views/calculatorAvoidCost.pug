@@ -1,0 +1,28 @@
+extends layout
+//TODO needs to be implemented
+block content
+    form#valueTypeForm(method='POST', action='/post_WSJF_item' )
+
+        #radiobuttons
+            fieldset
+                p Give your Task a name
+                input#itemName(type='text' name='itemName')
+                br
+                p How much will the cost be, if the cost event happens:
+                input#avocosttl(type='number', name='ttl')
+                br
+                p Is there a date when the when the cost event will occur:
+                input#avocostime(type='datetime', name='tme')
+                br
+                p How likely is it, that the event will occur in the next year in %:
+                input#avocosrisk(type='number', name='risk')
+                br
+        // Confirm Button to start calculation
+        br
+        button#confirmbutton(type='submit') save
+        br
+
+        // Output Element for calculations
+        #redcostotal
+        #output2
+

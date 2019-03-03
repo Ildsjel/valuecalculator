@@ -1,10 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-//define a set function that is executed to get
-// the total result of the calc before it is send to the db
-//https://code.tutsplus.com/articles/an-introduction-to-mongoose-for-mongodb-and-nodejs--cms-29527
-
 const WSJF = new Schema({
   createdOn: {
     type: Date,
@@ -47,7 +43,7 @@ const WSJF = new Schema({
   },
   estimationValue: {
     type: Number,
-    required: false
+    required: true
   },
     WSJFValue: {
       type: String,
@@ -55,12 +51,9 @@ const WSJF = new Schema({
           let WSJFValue = this.redcostotal / this.estimationValue;
           let redcostotal = this.redcostotal;
           let estimationValue = this.estimationValue;
-          console.log(redcostotal);
-          console.log(estimationValue);
-          console.log(WSJFValue);
-            return WSJFValue
+          return WSJFValue
         },
-    required: false
+    required: true
     }
 });
 
