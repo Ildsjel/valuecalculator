@@ -17,5 +17,10 @@ block content
         a #[strong Value/Time Efficiency Ratio (The higher the better)]
             a#listItem(string=WSJF) #{WSJF.WSJFValue}
 
+            //form(method='DELETE' action='/' + WSJF.id)
+                div
+                    input(type='hidden', required='true', value=_id )
+
+                button#confirmbutton(type='submit') Delete
 
 

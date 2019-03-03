@@ -2,8 +2,6 @@ const WSJF = require("../model/WSJFitem");
 const { body,validationResult } = require('express-validator/check');
 const { sanitizeBody } = require('express-validator/filter');
 
-//TODO sanitizing and trimming needs to be applied at a certain point
-
 //display a list of all WSJF Items
 
 exports.listAllWSJFItems = (req, res) => {
@@ -20,7 +18,7 @@ exports.listAllWSJFItems = (req, res) => {
 
 exports.createWSJFItem = [
     //Validate that fields are not empty
-    body('itemName', 'Genre name required').isLength({ min: 1 }).trim(),
+    body('itemName', 'Name required').isLength({ min: 1 }).trim(),
     body('redcostotalppl', 'People involved required').isLength({ min: 1}).trim(),
     body('redcostotalhrs', 'Hours involved required').isLength({ min: 1}).trim(),
     body('redcosfutureppl', 'Future people involved required').isLength({ min: 1}).trim(),
@@ -98,12 +96,16 @@ exports.updateWSJFitem = (req, res) => {
 
 
 //delete an item
-/*
-exports.deleteWSJFItem = (req, res) => {
-  WSJF.remove({ _id: req.params.WSJF_item_id }, (err, task) => {
-    if (err) {
-      res.status(404).send(err);
-    }
-    res.status(200).json(task);
-  });
-}; */
+
+//exports.deleteWSJFItem = (req, res) => {
+  //WSJF.remove(
+     // {
+          //_id: req.params.WSJF_item_id
+     // },
+      //(err, task) => {
+    //if (err) {
+     // res.status(404).send(err);
+   // }
+    //res.status(200).json(task);
+  //});
+//};
