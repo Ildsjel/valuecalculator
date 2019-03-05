@@ -3,6 +3,7 @@ extends layout
 block content
 
     h1 Name: #{WSJF.itemName}
+
     li
         a #[strong Current Process Values:]
             a#listItem(string=WSJF) People on Process: #{WSJF.redcostotalppl} People
@@ -16,11 +17,4 @@ block content
             a#listItem(string=WSJF) Estimated time in weeks to complete the task: #{WSJF.estimationValue} weeks
         a #[strong Value/Time Efficiency Ratio (The higher the better)]
             a#listItem(string=WSJF) #{WSJF.WSJFValue}
-
-            //form(method='DELETE' action='/' + WSJF.id)
-                div
-                    input(type='hidden', required='true', value=_id )
-
-                button#confirmbutton(type='submit') Delete
-
 

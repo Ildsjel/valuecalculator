@@ -4,7 +4,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const router = express.Router();
 const WSJFController = require("./controller/WSJFController");
-
+//const UserController = require("./controller/UserController");
 
 
 
@@ -19,8 +19,11 @@ const port = process.env.PORT || 3305;
 var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost:3305/");
+
+//configuration of the app
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 
 //here we define the views engine. we will use pug
 app.set('views engine', 'pug');
@@ -36,6 +39,7 @@ app
     .get(function (req, res) {
       res.render('index.pug');
     });
+
 //avoid cost calc
 app
     .route('/calculator')
@@ -52,23 +56,8 @@ app
 app
     .route("/:WSJF_item_id")
     //.delete(WSJFController.deleteWSJFItem)
-    .get(WSJFController.listWSJFItem)
-    .post(WSJFController.updateWSJFitem);
-
-//user route
-//app
-    //.route("/user/create")
-
-
-
-//app
-  //  .route("/:WSJF_item_id/update")
-
-
-
-
-
-
+    .get(WSJFController.listWSJFItem);
+    //.post(WSJFController.updateWSJFitem);
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);

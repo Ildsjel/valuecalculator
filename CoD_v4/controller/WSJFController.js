@@ -29,7 +29,7 @@ exports.createWSJFItem = [
     sanitizeBody('itemName').trim().escape(),
 
     //Process Request
-    (req, res, next) => {
+    (req, res) => {
 
     //extract errors from validation
         const errors = validationResult(req);
@@ -48,7 +48,7 @@ exports.createWSJFItem = [
 
     if (!errors.isEmpty()) {
         //there are errors = rerender form with error messages
-        res.render('calculator.pug', {title: 'Create Genre', task: newTask, errors: errors.array()});
+        res.render('calculator.pug', {title: '', task: newTask, errors: errors.array()});
         return;
     }
 
@@ -66,46 +66,34 @@ exports.createWSJFItem = [
 //detailview for a WSJF Item
 
 exports.listWSJFItem = (req, res) => {
-  WSJF.findById(req.params.WSJF_item_id, (err, task, next) => {
+
+  WSJF.findById(req.params.WSJF_item_id, (err, task) => {
     if (err) {
       res.status(500).send(err);
     }
-      res.render('calculatorDisplayItem.pug', {WSJF: task});;
+      res.render('calculatorDisplayItem.pug', {WSJF: task});
   });
 };
 
 
 //Update an item
 
-exports.updateWSJFitem = (req, res) => {
-
-    let newTask = (
-        {
-            _id: req.params.WSJF_item_id,
-            estimationValue: req.body.estimationValue,
-        });
-    console.log(newTask);
-    WSJF.findByIdAndUpdate(req.params.WSJF_item_id, newTask, {}, function (err, task) {
-      if (err) {
-        res.status(500).send(err);
-      }
-        res.render('calculatorDisplayItem.pug', {WSJF: task});;
-    }
-  );
-};
-
 
 //delete an item
 
-//exports.deleteWSJFItem = (req, res) => {
-  //WSJF.remove(
-     // {
-          //_id: req.params.WSJF_item_id
-     // },
-      //(err, task) => {
-    //if (err) {
-     // res.status(404).send(err);
-   // }
-    //res.status(200).json(task);
-  //});
-//};
+// exports.deleteWSJFItem = (req, res) => {
+
+    // let newTask = (
+        // {
+            // _id: req.params._id,
+       //  });
+
+    // console.log(_id);
+    // newTask.findByIdAndRemove(req.params._id, newTask, {}, function (err, task) {
+           // if (err) {
+              //  res.status(500).send(err);
+           //  }
+            // res.render('calculatorDisplayAllItems.pug', {newTask: task});
+        // }
+   // );
+// };

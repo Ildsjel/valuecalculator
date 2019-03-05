@@ -8,7 +8,7 @@ const WSJF = new Schema({
   },
   itemName: {
       type: String,
-      required: false
+      required: true
   },
   redcostotalppl: {
     type: Number,
@@ -49,8 +49,6 @@ const WSJF = new Schema({
       type: String,
         set: function() {
           let WSJFValue = this.redcostotal / this.estimationValue;
-          let redcostotal = this.redcostotal;
-          let estimationValue = this.estimationValue;
           return WSJFValue
         },
     required: true
