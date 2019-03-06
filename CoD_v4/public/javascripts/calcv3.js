@@ -2,11 +2,18 @@
 //TODO replace all this logic with mongoose set functions and delete it
 function valueType() {
 
+	/*TODO in general: if the ver first thing is to use if/else and that is the only blocks, maybe you should either:
+		- switch/case
+		- "sub" or helper functions
+		- make the bloody function more generic!
+	*/
+
 	/*case 1 - needs to be a Switch Statement -
 	runs when the user input is = "reducecost"*/
 
 	/*type reduce cost*/
 
+	//TODO camelCase
 	if (redcos.checked){
 		var manpower = document.getElementById("redcostotalppl").value;
 		var timespent = document.getElementById("redcostotalhrs").value;
@@ -33,7 +40,7 @@ function valueType() {
 }
 
 
-
+//TODO get rid of the spaces and breakline :)
 
 /*type cost avoided*/
 

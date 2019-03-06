@@ -1,5 +1,8 @@
 /*probability calculation*/
+
+//name functions camelCase!
 function calculateprobability () {
+  //let instead of var and use the fuckingCamelCase
   var riskpercentageperyear = document.getElementById("avocosrisk").value; /*INPUT FIELD IN HTML*/
   console.log(riskpercentageperyear);
   var weeksperyear = 52; /*The total number of objects is weeks per year which results always in 4 weeks per month. Are more accurate version calcs how many weeks are left for the current year*/
@@ -14,6 +17,12 @@ function calculateprobability () {
   console.log(probabilitypercentage);
   var roundedprobabilitypercentage = (probabilitypercentage).toFixed(1);
   console.log(roundedprobabilitypercentage);
+
+  /** All values are truthy unless they are defined as falsy (i.e., except for false, 0, "", null, undefined, and NaN)
+   * => if(!probability){
+   *
+   * }
+   * **/
 
     if (probability !=0){
 

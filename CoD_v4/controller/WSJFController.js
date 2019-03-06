@@ -4,6 +4,8 @@ const { sanitizeBody } = require('express-validator/filter');
 
 //display a list of all WSJF Items
 
+//TODO: rather use exports = {funcAPublic funcAPrivate, funcB: funcB} for refactoring purposes
+
 exports.listAllWSJFItems = (req, res) => {
   WSJF.find({}, (err, task) => {
     if (err) {

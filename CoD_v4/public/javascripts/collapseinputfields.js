@@ -1,5 +1,7 @@
 /*function to show inputs instead of alerts*/
 
+
+//Comment Nils: more generic. YYou are doing 4/5 times the same here with diffent names -> consider use parmater
 function valueTypeInput() {
 
 	if (document.getElementById('redcos').checked) {
